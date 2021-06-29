@@ -23,7 +23,7 @@ client.connect((err) => {
 
   /* 
                                         Post Api 
-                                                                                                */
+                                                                                                      */
 
   app.post("/add-blogs", (req, res) => {
     const newBlogs = req.body;
@@ -34,7 +34,7 @@ client.connect((err) => {
 
   /* 
                                         Get Api 
-                                                                                                */
+                                                                                                     */
 
   app.get("/all-blogs", (req, res) => {
     blogsCollection.find().toArray((err, blogs) => {
@@ -52,7 +52,7 @@ client.connect((err) => {
 
   /* 
                                         Delete Api 
-                                                                                                */
+                                                                                                      */
 
   app.delete("/delete-blog/:id", (req, res) => {
     blogsCollection
@@ -62,23 +62,6 @@ client.connect((err) => {
       });
   });
 
-  /* 
-                                        Register Api 
-                                                                                                */
-
-  // app.post("/register", (req, res) => {
-  //   const registerSchema = joi.object({
-  //       name: Joi.string().min(3).max(30).require(),
-  //       email: Joi.string().email().require(),
-  //       password: Joi.string().pattern(new.RegExp('^[a-zA-Z0-9]{3,30}$')).require(),
-  //       confirm_passWord: Joi.ref('password')
-  //   });
-  //   const {error} = registerSchema.validate(req.body)
-
-  //   if(error){
-  //       res.json({})
-  //   }
-  // });
   //end
 });
 
